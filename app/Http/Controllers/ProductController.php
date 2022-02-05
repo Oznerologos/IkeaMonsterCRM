@@ -15,7 +15,7 @@ class ProductController extends BaseController
      */
     public function index()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::with("promotion")->latest()->get();
 
         return $this->sendResponse($products, 'Product list');
     }
