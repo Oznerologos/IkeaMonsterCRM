@@ -15,7 +15,7 @@ class ProductController extends BaseController
      */
     public function index()
     {
-        $products = Product::with("promotion")->latest()->get();
+        $products = Product::with("users")->latest()->get();
 
         return $this->sendResponse($products, 'Product list');
     }

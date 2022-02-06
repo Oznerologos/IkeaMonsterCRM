@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Promotion::class);
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'promotions')->withPivot('promotion');
+    }
 }

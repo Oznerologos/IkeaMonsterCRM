@@ -28,4 +28,8 @@ class Product extends Model
         return $this->belongsTo(Promotion::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'promotions')->withPivot('promotion');
+    }
 }
