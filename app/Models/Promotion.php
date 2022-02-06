@@ -10,7 +10,9 @@ class Promotion extends Model
     use HasFactory;
 
     protected $fillable = [
-        'promotion'
+        'promotion',
+        'user_id',
+        'product_id'
     ];
 
     public function product()
