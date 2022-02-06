@@ -70,7 +70,7 @@ class ProductController extends BaseController
 
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::with('users')->find($id);
 
         return $this->sendResponse($product, 'product list');
     }
